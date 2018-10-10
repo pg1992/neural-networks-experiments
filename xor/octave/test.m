@@ -29,6 +29,10 @@ er = zeros(epochs, 1);
 for i = 1:epochs
     w = train(x, t, w, .01);
     er(i) = cost(t, x, w);
+
+    if mod(i, epochs / 10) == 0
+        printf('%.3f%% of training completed.\n', i / epochs * 100);
+    end
 end
 figure;
 plot(er);
