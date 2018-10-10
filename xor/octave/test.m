@@ -4,7 +4,7 @@ clc;
 
 n_data = 500;
 n_input = 2;
-n_hid = 5;
+n_hid = 3;
 n_class = 1;
 
 w.input_to_hid = randn(n_hid, n_input);
