@@ -27,7 +27,7 @@ plot(x(1, ~(y > .5)), x(2, ~(y > .5)), 'or');
 epochs = 10000;
 er = zeros(epochs, 1);
 for i = 1:epochs
-    w = train(x, t, w, .05);
+    w = train(x, t, w, .01);
     er(i) = cost(t, x, w);
 end
 figure;
