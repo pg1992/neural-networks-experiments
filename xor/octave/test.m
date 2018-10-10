@@ -24,7 +24,7 @@ hold on;
 plot(x(1, y > .5), x(2, y > .5), 'xk');
 plot(x(1, ~(y > .5)), x(2, ~(y > .5)), 'or');
 
-epochs = 10000;
+epochs = 100000;
 er = zeros(epochs, 1);
 for i = 1:epochs
     w = train(x, t, w, .01);
