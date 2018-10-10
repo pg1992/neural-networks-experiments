@@ -2,6 +2,7 @@ clear all;
 close all;
 clc;
 
+n_data = 500;
 n_input = 2;
 n_hid = 5;
 n_class = 1;
@@ -9,7 +10,7 @@ n_class = 1;
 w.input_to_hid = randn(n_hid, n_input);
 w.hid_to_class = randn(n_class, n_hid);
 
-x = randn(2, 200);
+x = randn(2, n_data);
 t = (x(1, :) > 0 & x(2, :) > 0) | (x(1, :) < 0 & x(2, :) < 0);
 
 y = simple_net(x, w);
