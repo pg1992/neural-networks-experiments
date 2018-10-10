@@ -38,12 +38,20 @@ figure;
 plot(er);
 
 y = simple_net(x, w);
+
 figure;
 subplot(121);
 hold on;
 plot(x(1, t), x(2, t), 'xk');
 plot(x(1, ~t), x(2, ~t), 'or');
+
 subplot(122);
 hold on;
 plot(x(1, y > .5), x(2, y > .5), 'xk');
 plot(x(1, ~(y > .5)), x(2, ~(y > .5)), 'or');
+
+wrong = (y > .5) ~= t;
+plot(x(1, wrong), x(2, wrong), 'ob', 'markersize', 10);
+
+errors = sum(wrong) / n_data * 100;
+printf('Total of errors: %.3f%%\n', errors);
